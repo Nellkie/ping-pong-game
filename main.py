@@ -8,12 +8,13 @@ game = True
 
 
 class GameSprite(sprite.Sprite):
-    def __init__(self, img, x, y, width, height,):
+    def __init__(self, img, x, y, width, height, speed):
         super().__init__()
         self.image = transform.scale(image.load(img), (width, height))
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+        self.speed = speed
     
     def draw(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
